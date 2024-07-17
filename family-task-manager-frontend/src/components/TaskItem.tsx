@@ -34,15 +34,9 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onDelete, onStatusCha
           <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${priorityColors[task.priority]}`}>
             {task.priority}
           </span>
-          <select
-            value={task.status}
-            onChange={(e) => onStatusChange(task.id, e.target.value as Task['status'])}
-            className={`block text-sm font-semibold rounded-full px-2 py-1 ${statusColors[task.status]}`}
-          >
-            <option value="pending">Pending</option>
-            <option value="in_progress">In Progress</option>
-            <option value="completed">Completed</option>
-          </select>
+          <span className={`block text-sm font-semibold rounded-full px-2 py-1 ${statusColors[task.status]}`}>
+            {task.status}
+          </span>
         </div>
       </div>
       <div className="mt-2 sm:flex sm:justify-between">
